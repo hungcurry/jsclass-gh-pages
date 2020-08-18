@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0ae4f0"],{"0a09":function(n,e,t){"use strict";t.r(e);var a=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v(" 白爛貓後台 | 首頁 ")])},u=[],c={name:"Index",data:function(){return{}}},r=c,l=t("2877"),i=Object(l["a"])(r,a,u,!1,null,null,null);e["default"]=i.exports}}]);
+//# sourceMappingURL=chunk-2d0ae4f0.4800a7c3.js.map

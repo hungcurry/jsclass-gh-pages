@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+<style>
+.ls-1 {
+  letter-spacing: 1px;
+}
+.p-xy-0 {
+  padding: 0 !important;
+}
+.price-m-b {
+  margin-bottom: 3px;
+}
+body {
+  box-sizing: border-box;
+}
+img{
+  display: block;
+  width: 100%;
+}
+header{
+  background-color: #f8f9fa;
+}
+.breadcrumb{
+  background-color:transparent;
+}
+.breadcrumb-item a {
+  color: #F9B552 ;
+}
+.breadcrumb-item.active {
+  color: #676d6d;
+}
+.list-group-item {
+  letter-spacing: 1px;
+}
+.list-group-item .list-btn {
+  display: block;
+  color: #000;
+  padding: 1em;
+}
+.list-group-item .list-btn:hover {
+  text-decoration: none;
+}
+.list-group-item .list-btn.active {
+  color: #fff;
+}
+.list-group-item.active {
+  background-color: #F9B552 !important;
+  border-color: #F9B552!important;
+}
+.list-group-item:hover {
+  background-color: #f9fbfb;
+}
+.card-deck {
+  justify-content: space-between;
+}
+.card-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1%;
+  overflow: hidden;
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+}
+@media screen and (min-width:768px){
+  .card-flex {
+    width: 32%;
+  }
+}
+.card-flex .item-img {
+  padding: 10px;
+}
+.card-flex .origin-price-f {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #696262;
+}
+.card-flex .price-color {
+  color: #e26021;
+}
+.card-flex .card-footer {
+  padding: .75rem .95rem;
+}
+.btn-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-flex .btn {
+  width: 100%;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+.btn-flex .btn-shopping, .btn-flex .btn-details {
+  color: #380606;
+}
+.btn-flex .btn-shopping {
+  background-color: #fff;
+  border: 1px solid #5c5c5c;
+}
+
+
+
+</style>
+
+<body>
+  
+  <header>
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">首頁</a></li>
+          <li class="breadcrumb-item active" aria-current="page">商品列表</li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container my-2">
+    <div class="row mt-4">
+      <div class="col-md-3 mb-2">
+        <ul class="list-group sticky-top">
+          <li class="list-group-item p-xy-0">
+            <a href="#" class="list-btn">所有商品</a>
+          </li>
+          <li class="list-group-item p-xy-0">
+            <a  href="#" class="list-btn">包袋類</a>
+          </li>
+          <li class="list-group-item p-xy-0 active">
+            <a href="#" class="list-btn active">絨毛類</a>
+          </li>
+          <li class="list-group-item p-xy-0">
+            <a href="#" class="list-btn">生活用品類</a>
+          </li>
+          <li class="list-group-item p-xy-0">
+            <a href="#" class="list-btn">3c用品類</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-12 col-md-9">
+        <div id="list" class="card-deck">
+    </div>
+      </div>
+    </div>  
+  </div>
+
+  <footer class="bg-light text-muted py-2">
+    <p class="text-center mb-1">圖片取自網路樂玩多 無商業用途，僅供學習使用</p>
+  </footer>
+  
+
+  <script src="all-week02.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21d634"],{d0a3:function(n,e,t){"use strict";t.r(e);var u=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v(" 白爛貓後台 | 優惠劵頁面 ")])},a=[],c={name:"Coupons",data:function(){return{}}},o=c,r=t("2877"),l=Object(r["a"])(o,u,a,!1,null,null,null);e["default"]=l.exports}}]);
+//# sourceMappingURL=chunk-2d21d634.27a6418d.js.map

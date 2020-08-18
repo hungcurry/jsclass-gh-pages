@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  １） simple call
+      包含立即函式 回呼函示 （callback function)
+      將一個函式當成參數 包在另一個函式內
+      this => 全域
+  ２） 箭頭函式沒有自己的this
+  ３） 物件中的函式 去看前面的obj（誰呼叫的）
+  
+  <script>
+  
+  var myName = "全域";
+  var obj ={
+    myName : "小明",
+    arr: [1,2,3],
+    fn1: function(){
+    //1
+    (function(){
+      console.log('1-1',this.myName); 
+    })();//全域
+    //2
+    (()=>{
+      console.log('1-2',this.myName);
+    })();//小明
+    //3
+    this.arr.forEach(function(item){
+      console.log('1-3',this.myName);
+    });//全域
+    //4
+    this.arr.forEach((item)=>{
+      console.log('1-4',this.myName);
+    });//小明
+
+    console.log('now' + this.myName);
+
+    }
+  }
+  obj.fn1();//小明
+
+  </script>
+
+
+
+</body>
+</html>
+
+
+

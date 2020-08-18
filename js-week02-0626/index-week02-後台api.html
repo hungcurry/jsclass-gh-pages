@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    .completed {
+      text-decoration: line-through
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="container my-3">
+    <button id="get" class="btn btn-outline-primary">Get</button>
+    <button id="post" class="btn btn-outline-primary">Post</button>
+    <button id="patch" class="btn btn-outline-primary">Patch</button>
+    <button id="delete" class="btn btn-outline-primary">Delete</button>
+  </div>
+
+
+  <script>
+
+    document.querySelector('#get').addEventListener('click', getData);
+    document.querySelector('#post').addEventListener('click', postData);
+    document.querySelector('#patch').addEventListener('click', patchData);
+    document.querySelector('#delete').addEventListener('click', deleteData);
+    
+
+    var uuid = 'feec8521-8cf5-41e0-aa0d-3bac8c6c6213'; //每個同學,獨立的API路徑（固定的）
+    var token = 'CYag6qDayhgPTWgiDFiAVRLi32jN3rsdXgdVn4z2mFuG8AJQqA6l5NEdQQjm';//驗證使用 會不斷的變更 要是失敗 請重填
+    var apiPath = 'https://course-ec-api.hexschool.io/';//固定站點的路徑
+
+    // 小心，有錯～，請參考課程影片
+    var sampleData = {
+      title: '好茶',
+      category: 'tea',
+      content: '內容',
+      imageUrl: [
+        'https://images.unsplash.com/photo-1587918515749-a2a68b40a124?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
+      ],
+      enabled: true,
+      origin_price: 100,
+      price: 90,
+      unit: '杯',
+    }
+    //後台驗證token
+    axios.defaults.headers['Authorization'] = `Bearer ${token}`
+    // axios 設定說明：https://github.com/axios/axios#config-defaults
+
+    //取得資料Product list (複數)
+    function getData() {
+      console.log('getData');
+      var api = `${apiPath}api/${uuid}/admin/ec/products`;
+      console.log(api);
+      //axios
+      axios.get(api)
+      .then(function(res){
+        console.log(res);
+      });
+    }
+
+    //建立資料Create product (單數)
+    function postData() {
+      console.log('postData');
+      var api = `${apiPath}api/${uuid}/admin/ec/product`;
+      var data ={
+        title: '新增一筆資料測試',
+        category: 'tea',
+        content: '內容',
+        description: '材質:表布及填充物100%聚酯纖維',
+        imageUrl: [
+          'https://images.unsplash.com/photo-1587918515749-a2a68b40a124?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
+        ],
+        enabled: true,
+        origin_price: 100,
+        price: 90,
+        unit: '杯',
+      }
+      console.log(api);
+      //axios
+      axios.post(api, data)
+      // 記得夾帶資料data 並去看後台Status required都要補上
+      .then(function(res){
+        console.log(res);
+      });
+    }
+
+    //更新資料 Edit product
+    function patchData() {
+      console.log('patchData');
+      // var api = `${apiPath}api/${uuid}/admin/ec/product/{id}`;
+      //貼入要更新的id
+      var api = `${apiPath}api/${uuid}/admin/ec/product/
+      uvAbmv5xkdbnASoBA7Y2krL4VLubPR2RuzcycucZ8IjExEFtXBXhuGGlRpWeBWP6`;
+      var data ={
+        title: '更新 我很帥',
+        category: 'tea',
+        content: '內容',
+        description: '材質:表布及填充物100%聚酯纖維',
+        imageUrl: [
+          'https://images.unsplash.com/photo-1587918515749-a2a68b40a124?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
+        ],
+        enabled: true,
+        origin_price: 100,
+        price: 90,
+        unit: '杯',
+      }
+      console.log(api);
+      //axios
+      axios.patch(api, data)
+      // 記得夾帶資料data 並去看後台Status required都要補上
+      .then(function(res){
+        console.log(res);
+      });
+    }
+    
+    //刪除資料Destroy product.
+    function deleteData() {
+      console.log('deleteData');
+      //貼入要刪除的id
+      var api = `${apiPath}api/${uuid}/admin/ec/product/oo7tUb5MoANrnAb0ovPkHjutqr9raNQ8OSbeTDOO48GdAOPJj9tSITOmAmx6xvkC`;
+      console.log(api);
+      //axios
+      axios.delete(api)
+      .then(function(res){
+        console.log(res);
+      });
+    }
+
+  </script>
+</body>
+</html>
+
+
